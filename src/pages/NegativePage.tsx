@@ -4,7 +4,7 @@ import BackButton from "@/components/BackButton";
 import Icon from "@/components/ui/icon";
 
 type Section = "prep" | "doctor" | "resources" | null;
-type MkbbItem = "institutions" | "criteria" | "female" | "male" | null;
+type MkbbItem = "institutions" | "criteria" | "female" | "male" | "tactics" | null;
 
 const NegativePage = () => {
   const navigate = useNavigate();
@@ -361,32 +361,63 @@ const NegativePage = () => {
                   </button>
                   {openMkbb === "institutions" && (
                     <div className="bg-white rounded-xl p-3 animate-fade-in flex flex-col gap-2">
-                      <p className="text-gray-600 text-xs leading-relaxed mb-2">
-                        В Свердловской области направление на ВРТ оформляют в
-                        следующих медучреждениях:
-                      </p>
                       <div className="bg-orange-50 rounded-lg p-2.5">
-                        <p className="font-bold text-orange-800 text-xs">
-                          🏥 ГАУЗ СО «КДЦ Охрана здоровья матери и ребёнка»
-                        </p>
-                        <p className="text-gray-500 text-xs mt-0.5">
-                          г. Екатеринбург, ул. Флотская, 52
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГБУЗ СО «ЕКПЦ»</b> (для города Екатеринбурга)
                         </p>
                       </div>
                       <div className="bg-orange-50 rounded-lg p-2.5">
-                        <p className="font-bold text-orange-800 text-xs">
-                          🏥 ГБУЗ СО «ОДКБ №1» — Перинатальный центр
-                        </p>
-                        <p className="text-gray-500 text-xs mt-0.5">
-                          г. Екатеринбург, ул. С. Дерябиной, 32
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГАУЗ СО «ОДКБ»</b> — (Берёзовский, Реж, Сысерть,
+                          Арамиль, Артёмовский, Полевской, Верхняя Пышма и
+                          Среднеуральск)
                         </p>
                       </div>
                       <div className="bg-orange-50 rounded-lg p-2.5">
-                        <p className="font-bold text-orange-800 text-xs">
-                          🏥 Центр семейной медицины
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГАУЗ СО «Алапаевская ГБ»</b> (Алапаевск)
                         </p>
-                        <p className="text-gray-500 text-xs mt-0.5">
-                          Партнёр программы ОМС, г. Екатеринбург
+                      </div>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГАУЗ СО «ГБ город Асбест»</b> (Асбест, Рефть,
+                          Малышевский ГО, Верхнее Дуброво, Сухой Лог)
+                        </p>
+                      </div>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГАУЗ СО «КДЦ „ОЗМР“» и ФГБУ «НИИ ОММ»</b> (для
+                          Восточного округа)
+                        </p>
+                      </div>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГАУЗ СО «ГБ город Каменск-Уральский»</b> (для
+                          Южного округа)
+                        </p>
+                      </div>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГАУЗ СО «Красноуфимская РБ»</b> (Красноуфимск,
+                          Ачит, Арти)
+                        </p>
+                      </div>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГАУЗ СО «ГБ №4 город Нижний Тагил»</b> (для
+                          Горнозаводского округа)
+                        </p>
+                      </div>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГАУЗ СО «ГБ город Первоуральск»</b> (для
+                          Западного округа)
+                        </p>
+                      </div>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="text-gray-700 text-xs leading-relaxed">
+                          • <b>ГАУЗ СО «Серовская ГБ»</b> (для Северного
+                          округа)
                         </p>
                       </div>
                     </div>
@@ -406,21 +437,13 @@ const NegativePage = () => {
                   </button>
                   {openMkbb === "criteria" && (
                     <div className="bg-white rounded-xl p-3 animate-fade-in">
-                      <p className="text-gray-600 text-xs leading-relaxed mb-2">
-                        Бесплодие — отсутствие беременности при регулярной
-                        половой жизни без контрацепции в течение:
-                      </p>
-                      <ul className="flex flex-col gap-1.5 text-gray-700 text-xs">
-                        <li className="bg-orange-50 rounded-lg p-2">
-                          ⏳ <b>12 месяцев</b> — для женщин до 35 лет
-                        </li>
-                        <li className="bg-orange-50 rounded-lg p-2">
-                          ⏳ <b>6 месяцев</b> — для женщин 35 лет и старше
-                        </li>
-                      </ul>
-                      <p className="text-gray-600 text-xs leading-relaxed mt-2">
-                        Бесплодие может быть первичным (беременности не было
-                        никогда) или вторичным (была хотя бы одна).
+                      <p className="text-gray-700 text-xs leading-relaxed">
+                        Пару считают бесплодной, если беременность у женщины не
+                        наступает в течение года регулярной половой жизни без
+                        использования средств и методов контрацепции. На
+                        лечение бесплодия имеют право мужчина и женщина, как
+                        состоящие, так и не состоящие в зарегистрированном
+                        браке.
                       </p>
                     </div>
                   )}
@@ -439,30 +462,36 @@ const NegativePage = () => {
                   </button>
                   {openMkbb === "female" && (
                     <div className="bg-white rounded-xl p-3 animate-fade-in">
-                      <p className="text-gray-600 text-xs leading-relaxed mb-2">
-                        Базовое обследование включает:
-                      </p>
                       <ul className="flex flex-col gap-1.5 text-gray-700 text-xs">
                         <li className="bg-orange-50 rounded-lg p-2">
-                          🩸 Анализы на гормоны (ФСГ, ЛГ, АМГ, пролактин, ТТГ,
-                          эстрадиол)
+                          • Оценка проходимости маточных труб
                         </li>
                         <li className="bg-orange-50 rounded-lg p-2">
-                          🦠 Обследование на инфекции (ИППП, TORCH-комплекс)
+                          • Определение гормонального фона
                         </li>
                         <li className="bg-orange-50 rounded-lg p-2">
-                          📷 УЗИ органов малого таза
+                          • УЗИ молочных желез и/или маммография
                         </li>
                         <li className="bg-orange-50 rounded-lg p-2">
-                          💧 Проверка проходимости маточных труб (ГСГ)
+                          • Микробиологическое исследование на ИППП
                         </li>
                         <li className="bg-orange-50 rounded-lg p-2">
-                          🔬 Кольпоскопия и цитология
+                          • Кольпоскопия
                         </li>
                         <li className="bg-orange-50 rounded-lg p-2">
-                          📊 Общий и биохимический анализ крови
+                          • Консультация эндокринолога
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          • Биопсия эндометрия (по показаниям)
                         </li>
                       </ul>
+                      <p className="text-gray-700 text-xs leading-relaxed mt-2">
+                        При наличии показаний для хирургического лечения
+                        (трубно-перитонеальное бесплодие, миома матки, полипы
+                        эндометрия, эндометриоз и т.д.) женщина
+                        госпитализируется в гинекологическое отделение для
+                        проведения лечения, преимущественно эндоскопического.
+                      </p>
                     </div>
                   )}
 
@@ -480,29 +509,48 @@ const NegativePage = () => {
                   </button>
                   {openMkbb === "male" && (
                     <div className="bg-white rounded-xl p-3 animate-fade-in">
-                      <p className="text-gray-600 text-xs leading-relaxed mb-2">
-                        Базовое обследование включает:
-                      </p>
                       <ul className="flex flex-col gap-1.5 text-gray-700 text-xs">
                         <li className="bg-orange-50 rounded-lg p-2">
-                          🧪 Спермограмма (основной анализ)
+                          • Общее и специальное андрологическое обследование
                         </li>
                         <li className="bg-orange-50 rounded-lg p-2">
-                          🦠 MAR-тест на антиспермальные антитела
+                          • Спермограмма
                         </li>
                         <li className="bg-orange-50 rounded-lg p-2">
-                          💉 Анализы на гормоны (тестостерон, ФСГ, ЛГ)
+                          • УЗИ половых органов
                         </li>
                         <li className="bg-orange-50 rounded-lg p-2">
-                          🔍 Обследование на инфекции (ИППП)
-                        </li>
-                        <li className="bg-orange-50 rounded-lg p-2">
-                          📷 УЗИ органов мошонки и предстательной железы
-                        </li>
-                        <li className="bg-orange-50 rounded-lg p-2">
-                          👨‍⚕️ Консультация уролога-андролога
+                          • Гормональный фон
                         </li>
                       </ul>
+                      <p className="text-gray-700 text-xs leading-relaxed mt-2">
+                        При наличии показаний для оперативного лечения
+                        (варикоцеле, фимоз, гидроцеле) — госпитализация в
+                        урологическое отделение.
+                      </p>
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => toggleMkbb("tactics")}
+                    className="bg-white rounded-xl p-3 flex items-center gap-2 w-full text-left hover:scale-[1.01] transition-transform"
+                  >
+                    <span>💊</span>
+                    <p className="font-semibold text-gray-700 text-sm flex-1">
+                      Выбор тактики лечения
+                    </p>
+                    <span className="text-orange-500 text-sm">
+                      {openMkbb === "tactics" ? "∧" : "∨"}
+                    </span>
+                  </button>
+                  {openMkbb === "tactics" && (
+                    <div className="bg-white rounded-xl p-3 animate-fade-in">
+                      <p className="text-gray-700 text-xs leading-relaxed">
+                        Выбор тактики ведения и лечения определяется видом
+                        бесплодия. При абсолютном трубном бесплодии,
+                        неэффективности консервативного и оперативного лечения
+                        определяются показания для ВРТ.
+                      </p>
                     </div>
                   )}
                 </div>
