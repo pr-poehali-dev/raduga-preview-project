@@ -6,8 +6,8 @@ import Icon from '@/components/ui/icon';
 const weeks = [
   {
     label: '4–5 недель',
-    desc: 'Идёт активное развитие внезародышевых органов. В данное время происходит зарождение всех основных систем будущего организма.',
-    img: 'https://cdn.poehali.dev/projects/1e2c7eb4-b816-4660-8c2e-943f1c0f94ed/files/22ef36fa-c6dd-430c-b791-04018a7c4de9.jpg',
+    desc: 'Эмбрион размером с маковое зёрнышко (1–2 мм). Формируется нервная трубка и крошечное сердце, которое начинает биться. Закладываются основы всех органов.',
+    img: 'https://cdn.poehali.dev/projects/1e2c7eb4-b816-4660-8c2e-943f1c0f94ed/files/df2e5d63-8ad1-44c1-8da5-a286ee601f5b.jpg',
   },
   {
     label: '8 недель',
@@ -45,8 +45,15 @@ const PositivePage = () => {
   if (showBabyDetail) {
     return (
       <div className="bg-page min-h-screen px-4 py-6 font-manrope relative overflow-hidden">
-        <div className="absolute top-32 right-6 text-2xl opacity-30 animate-float pointer-events-none">💕</div>
-        <div className="absolute top-1/2 left-4 text-2xl opacity-30 animate-float pointer-events-none" style={{ animationDelay: '1s' }}>✨</div>
+        <div className="absolute top-16 left-6 text-lg opacity-50 animate-pulse-soft pointer-events-none">✨</div>
+        <div className="absolute top-28 right-8 text-xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.5s' }}>⭐</div>
+        <div className="absolute top-44 left-10 text-base opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1s' }}>✨</div>
+        <div className="absolute top-1/3 right-4 text-xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.5s' }}>⭐</div>
+        <div className="absolute top-1/2 left-3 text-2xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.3s' }}>✨</div>
+        <div className="absolute top-2/3 right-6 text-lg opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.8s' }}>⭐</div>
+        <div className="absolute bottom-1/3 left-12 text-xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.8s' }}>✨</div>
+        <div className="absolute bottom-24 right-10 text-2xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.2s' }}>⭐</div>
+        <div className="absolute top-32 right-2 text-2xl opacity-30 animate-float pointer-events-none">💕</div>
 
         <div className="max-w-sm mx-auto animate-fade-in relative z-10">
           <BackButton onClick={() => setShowBabyDetail(false)} />
@@ -136,12 +143,25 @@ const PositivePage = () => {
                     href="https://2gis.ru/ekaterinburg/search/%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white rounded-xl p-3 flex items-start gap-3 hover:scale-[1.02] transition-transform"
+                    className="bg-white rounded-xl p-3 flex items-start gap-3 hover:scale-[1.02] transition-transform mb-2"
                   >
                     <span className="text-xl flex-shrink-0">📍</span>
                     <div className="flex-1">
                       <p className="font-bold text-orange-700 text-sm">Ближайшая женская консультация</p>
                       <p className="text-gray-500 text-xs mt-0.5">Поиск на карте Екатеринбурга</p>
+                    </div>
+                    <Icon name="ExternalLink" size={16} className="text-orange-600 flex-shrink-0 mt-1" />
+                  </a>
+                  <a
+                    href="https://max.ru/k_vrachu_sverdlovsk_bot"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-white rounded-xl p-3 flex items-start gap-3 hover:scale-[1.02] transition-transform"
+                  >
+                    <span className="text-xl flex-shrink-0">💬</span>
+                    <div className="flex-1">
+                      <p className="font-bold text-orange-700 text-sm">Записаться к врачу — MAX</p>
+                      <p className="text-gray-500 text-xs mt-0.5">Чат-бот Свердловской области</p>
                     </div>
                     <Icon name="ExternalLink" size={16} className="text-orange-600 flex-shrink-0 mt-1" />
                   </a>
@@ -280,9 +300,18 @@ const PositivePage = () => {
 
   return (
     <div className="bg-page min-h-screen px-4 py-8 font-manrope flex flex-col items-center relative overflow-hidden">
-      <div className="absolute top-24 left-8 text-3xl opacity-40 animate-float pointer-events-none">💕</div>
-      <div className="absolute top-1/3 right-6 text-2xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '1.2s' }}>✨</div>
-      <div className="absolute bottom-40 left-10 text-3xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '0.6s' }}>🌸</div>
+      <div className="absolute top-12 left-6 text-xl opacity-50 animate-pulse-soft pointer-events-none">✨</div>
+      <div className="absolute top-24 right-8 text-2xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.4s' }}>⭐</div>
+      <div className="absolute top-40 left-12 text-lg opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.8s' }}>✨</div>
+      <div className="absolute top-56 right-4 text-xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.2s' }}>⭐</div>
+      <div className="absolute top-1/3 left-4 text-2xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.6s' }}>✨</div>
+      <div className="absolute top-1/2 right-10 text-lg opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.6s' }}>⭐</div>
+      <div className="absolute bottom-1/3 left-8 text-xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.4s' }}>✨</div>
+      <div className="absolute bottom-40 right-12 text-2xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.2s' }}>⭐</div>
+      <div className="absolute bottom-24 left-6 text-lg opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.8s' }}>✨</div>
+      <div className="absolute bottom-12 right-8 text-xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1s' }}>⭐</div>
+      <div className="absolute top-32 left-1/2 text-3xl opacity-40 animate-float pointer-events-none">💕</div>
+      <div className="absolute bottom-1/2 left-2 text-2xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '0.5s' }}>🌸</div>
 
       <div className="max-w-sm w-full mx-auto animate-fade-in flex flex-col items-center relative z-10">
         <div className="self-start w-full">
@@ -290,11 +319,15 @@ const PositivePage = () => {
         </div>
 
         <div className="relative mb-6 animate-scale-in">
-          <span className="absolute -top-4 left-0 text-2xl animate-pulse-soft">💕</span>
-          <div className="w-52 h-52 rounded-full bg-white/60 backdrop-blur-sm shadow-lg flex items-center justify-center animate-float">
-            <span className="text-9xl">👶</span>
+          <span className="absolute -top-4 left-0 text-2xl animate-pulse-soft z-10">💕</span>
+          <div className="w-52 h-52 rounded-full bg-white/60 backdrop-blur-sm shadow-lg flex items-center justify-center animate-float overflow-hidden">
+            <img
+              src="https://cdn.poehali.dev/projects/1e2c7eb4-b816-4660-8c2e-943f1c0f94ed/files/f8bb44c1-2252-4507-9f10-9165eb5c20e1.jpg"
+              alt="Малыш"
+              className="w-full h-full object-cover"
+            />
           </div>
-          <span className="absolute -bottom-2 right-0 text-3xl animate-pulse-soft" style={{ animationDelay: '1s' }}>✨</span>
+          <span className="absolute -bottom-2 right-0 text-3xl animate-pulse-soft z-10" style={{ animationDelay: '1s' }}>✨</span>
         </div>
 
         <div className="bg-white rounded-2xl shadow-md p-7 w-full text-center animate-fade-in" style={{ animationDelay: '0.2s' }}>

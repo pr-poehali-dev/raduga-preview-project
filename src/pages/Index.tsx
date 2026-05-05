@@ -5,9 +5,17 @@ const Index = () => {
 
   return (
     <div className="bg-page min-h-screen flex flex-col items-center px-5 py-12 font-manrope relative overflow-hidden">
+      <div className="absolute top-10 left-8 text-xl opacity-50 animate-pulse-soft pointer-events-none">✨</div>
       <div className="absolute top-20 right-10 text-3xl opacity-40 animate-float pointer-events-none">💕</div>
+      <div className="absolute top-32 left-4 text-lg opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.5s' }}>⭐</div>
       <div className="absolute top-40 left-6 text-2xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '1.5s' }}>✨</div>
+      <div className="absolute top-52 right-6 text-xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1s' }}>⭐</div>
+      <div className="absolute top-1/2 left-10 text-lg opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.4s' }}>✨</div>
+      <div className="absolute top-2/3 right-12 text-xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.7s' }}>⭐</div>
+      <div className="absolute bottom-1/3 left-6 text-lg opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.6s' }}>✨</div>
       <div className="absolute bottom-32 right-8 text-3xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '0.8s' }}>🌸</div>
+      <div className="absolute bottom-20 left-8 text-xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.3s' }}>⭐</div>
+      <div className="absolute bottom-12 right-10 text-lg opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.2s' }}>✨</div>
 
       <div className="w-full max-w-sm flex flex-col items-center animate-fade-in relative z-10">
         <div className="text-7xl mb-6 mt-4 animate-float">🤰</div>

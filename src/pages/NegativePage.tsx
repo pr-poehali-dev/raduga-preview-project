@@ -4,20 +4,34 @@ import BackButton from '@/components/BackButton';
 import Icon from '@/components/ui/icon';
 
 type Section = 'prep' | 'doctor' | 'resources' | null;
+type MkbbItem = 'institutions' | 'criteria' | 'female' | 'male' | null;
 
 const NegativePage = () => {
   const navigate = useNavigate();
   const [openSection, setOpenSection] = useState<Section>(null);
+  const [openMkbb, setOpenMkbb] = useState<MkbbItem>(null);
 
   const toggle = (s: Section) => {
     setOpenSection(prev => prev === s ? null : s);
   };
 
+  const toggleMkbb = (m: MkbbItem) => {
+    setOpenMkbb(prev => prev === m ? null : m);
+  };
+
   return (
     <div className="bg-page min-h-screen px-4 py-8 font-manrope relative overflow-hidden">
+      <div className="absolute top-12 left-6 text-xl opacity-50 animate-pulse-soft pointer-events-none">✨</div>
+      <div className="absolute top-24 right-10 text-2xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.4s' }}>⭐</div>
+      <div className="absolute top-40 left-10 text-lg opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.8s' }}>✨</div>
+      <div className="absolute top-56 right-4 text-xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.2s' }}>⭐</div>
+      <div className="absolute top-1/3 left-4 text-2xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.6s' }}>✨</div>
+      <div className="absolute top-1/2 right-12 text-lg opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.6s' }}>⭐</div>
+      <div className="absolute bottom-1/3 left-10 text-xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.4s' }}>✨</div>
+      <div className="absolute bottom-44 right-6 text-2xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.2s' }}>⭐</div>
+      <div className="absolute bottom-24 left-6 text-lg opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.8s' }}>✨</div>
       <div className="absolute top-32 right-8 text-3xl opacity-40 animate-float pointer-events-none">🌿</div>
-      <div className="absolute top-1/3 left-6 text-2xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '1.4s' }}>✨</div>
-      <div className="absolute bottom-44 right-10 text-3xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '0.7s' }}>💜</div>
+      <div className="absolute bottom-44 right-2 text-3xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '0.7s' }}>💜</div>
 
       <div className="max-w-sm mx-auto animate-fade-in relative z-10">
         <BackButton onClick={() => navigate('/')} color="text-purple-700" />
@@ -114,19 +128,22 @@ const NegativePage = () => {
               <p className="text-gray-700 text-sm leading-relaxed mb-4">
                 Запишись к акушеру-гинекологу прямо сейчас через официальный чат-бот Свердловской области — быстро и без очередей.
               </p>
-              <div className="bg-indigo-50 rounded-xl p-4 mb-3">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-xl bg-indigo-500 flex items-center justify-center text-white text-2xl flex-shrink-0">
-                    💬
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-bold text-indigo-700 text-base">Мессенджер MAX</p>
-                    <p className="text-gray-600 text-sm">Чат-бот «Запись к врачу»</p>
-                    <p className="text-indigo-600 text-xs mt-0.5">Свердловская область</p>
-                  </div>
-                  <Icon name="ArrowRight" size={20} className="text-indigo-500 flex-shrink-0" />
+              <a
+                href="https://max.ru/k_vrachu_sverdlovsk_bot"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-indigo-50 rounded-xl p-4 mb-3 flex items-center gap-3 hover:scale-[1.02] transition-transform"
+              >
+                <div className="w-12 h-12 rounded-xl bg-indigo-500 flex items-center justify-center text-white text-2xl flex-shrink-0">
+                  💬
                 </div>
-              </div>
+                <div className="flex-1">
+                  <p className="font-bold text-indigo-700 text-base">Мессенджер MAX</p>
+                  <p className="text-gray-600 text-sm">Чат-бот «Запись к врачу»</p>
+                  <p className="text-indigo-600 text-xs mt-0.5">Свердловская область</p>
+                </div>
+                <Icon name="ExternalLink" size={20} className="text-indigo-500 flex-shrink-0" />
+              </a>
               <div className="bg-gray-50 rounded-xl p-3 text-center">
                 <p className="text-gray-500 text-xs leading-relaxed">
                   Также можно позвонить в регистратуру своей поликлиники или обратиться через портал Госуслуг
@@ -204,22 +221,100 @@ const NegativePage = () => {
                   <h3 className="font-bold text-orange-800 text-sm">МКББ — Межведомственная комиссия по бесплодию</h3>
                 </div>
                 <div className="flex flex-col gap-2">
-                  <div className="bg-white rounded-xl p-3 flex items-center gap-2">
+                  <button
+                    onClick={() => toggleMkbb('institutions')}
+                    className="bg-white rounded-xl p-3 flex items-center gap-2 w-full text-left hover:scale-[1.01] transition-transform"
+                  >
                     <span>🏛️</span>
                     <p className="font-semibold text-gray-700 text-sm flex-1">Учреждения МКББ</p>
-                  </div>
-                  <div className="bg-white rounded-xl p-3 flex items-center gap-2">
+                    <span className="text-orange-500 text-sm">{openMkbb === 'institutions' ? '∧' : '∨'}</span>
+                  </button>
+                  {openMkbb === 'institutions' && (
+                    <div className="bg-white rounded-xl p-3 animate-fade-in flex flex-col gap-2">
+                      <p className="text-gray-600 text-xs leading-relaxed mb-2">
+                        В Свердловской области направление на ВРТ оформляют в следующих медучреждениях:
+                      </p>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="font-bold text-orange-800 text-xs">🏥 ГАУЗ СО «КДЦ Охрана здоровья матери и ребёнка»</p>
+                        <p className="text-gray-500 text-xs mt-0.5">г. Екатеринбург, ул. Флотская, 52</p>
+                      </div>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="font-bold text-orange-800 text-xs">🏥 ГБУЗ СО «ОДКБ №1» — Перинатальный центр</p>
+                        <p className="text-gray-500 text-xs mt-0.5">г. Екатеринбург, ул. С. Дерябиной, 32</p>
+                      </div>
+                      <div className="bg-orange-50 rounded-lg p-2.5">
+                        <p className="font-bold text-orange-800 text-xs">🏥 Центр семейной медицины</p>
+                        <p className="text-gray-500 text-xs mt-0.5">Партнёр программы ОМС, г. Екатеринбург</p>
+                      </div>
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => toggleMkbb('criteria')}
+                    className="bg-white rounded-xl p-3 flex items-center gap-2 w-full text-left hover:scale-[1.01] transition-transform"
+                  >
                     <span>ℹ️</span>
                     <p className="font-semibold text-gray-700 text-sm flex-1">Критерии бесплодия</p>
-                  </div>
-                  <div className="bg-white rounded-xl p-3 flex items-center gap-2">
+                    <span className="text-orange-500 text-sm">{openMkbb === 'criteria' ? '∧' : '∨'}</span>
+                  </button>
+                  {openMkbb === 'criteria' && (
+                    <div className="bg-white rounded-xl p-3 animate-fade-in">
+                      <p className="text-gray-600 text-xs leading-relaxed mb-2">
+                        Бесплодие — отсутствие беременности при регулярной половой жизни без контрацепции в течение:
+                      </p>
+                      <ul className="flex flex-col gap-1.5 text-gray-700 text-xs">
+                        <li className="bg-orange-50 rounded-lg p-2">⏳ <b>12 месяцев</b> — для женщин до 35 лет</li>
+                        <li className="bg-orange-50 rounded-lg p-2">⏳ <b>6 месяцев</b> — для женщин 35 лет и старше</li>
+                      </ul>
+                      <p className="text-gray-600 text-xs leading-relaxed mt-2">
+                        Бесплодие может быть первичным (беременности не было никогда) или вторичным (была хотя бы одна).
+                      </p>
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => toggleMkbb('female')}
+                    className="bg-white rounded-xl p-3 flex items-center gap-2 w-full text-left hover:scale-[1.01] transition-transform"
+                  >
                     <span>👩</span>
                     <p className="font-semibold text-gray-700 text-sm flex-1">Обследование женщины</p>
-                  </div>
-                  <div className="bg-white rounded-xl p-3 flex items-center gap-2">
+                    <span className="text-orange-500 text-sm">{openMkbb === 'female' ? '∧' : '∨'}</span>
+                  </button>
+                  {openMkbb === 'female' && (
+                    <div className="bg-white rounded-xl p-3 animate-fade-in">
+                      <p className="text-gray-600 text-xs leading-relaxed mb-2">Базовое обследование включает:</p>
+                      <ul className="flex flex-col gap-1.5 text-gray-700 text-xs">
+                        <li className="bg-orange-50 rounded-lg p-2">🩸 Анализы на гормоны (ФСГ, ЛГ, АМГ, пролактин, ТТГ, эстрадиол)</li>
+                        <li className="bg-orange-50 rounded-lg p-2">🦠 Обследование на инфекции (ИППП, TORCH-комплекс)</li>
+                        <li className="bg-orange-50 rounded-lg p-2">📷 УЗИ органов малого таза</li>
+                        <li className="bg-orange-50 rounded-lg p-2">💧 Проверка проходимости маточных труб (ГСГ)</li>
+                        <li className="bg-orange-50 rounded-lg p-2">🔬 Кольпоскопия и цитология</li>
+                        <li className="bg-orange-50 rounded-lg p-2">📊 Общий и биохимический анализ крови</li>
+                      </ul>
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => toggleMkbb('male')}
+                    className="bg-white rounded-xl p-3 flex items-center gap-2 w-full text-left hover:scale-[1.01] transition-transform"
+                  >
                     <span>👨</span>
                     <p className="font-semibold text-gray-700 text-sm flex-1">Обследование мужчины</p>
-                  </div>
+                    <span className="text-orange-500 text-sm">{openMkbb === 'male' ? '∧' : '∨'}</span>
+                  </button>
+                  {openMkbb === 'male' && (
+                    <div className="bg-white rounded-xl p-3 animate-fade-in">
+                      <p className="text-gray-600 text-xs leading-relaxed mb-2">Базовое обследование включает:</p>
+                      <ul className="flex flex-col gap-1.5 text-gray-700 text-xs">
+                        <li className="bg-orange-50 rounded-lg p-2">🧪 Спермограмма (основной анализ)</li>
+                        <li className="bg-orange-50 rounded-lg p-2">🦠 MAR-тест на антиспермальные антитела</li>
+                        <li className="bg-orange-50 rounded-lg p-2">💉 Анализы на гормоны (тестостерон, ФСГ, ЛГ)</li>
+                        <li className="bg-orange-50 rounded-lg p-2">🔍 Обследование на инфекции (ИППП)</li>
+                        <li className="bg-orange-50 rounded-lg p-2">📷 УЗИ органов мошонки и предстательной железы</li>
+                        <li className="bg-orange-50 rounded-lg p-2">👨‍⚕️ Консультация уролога-андролога</li>
+                      </ul>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
