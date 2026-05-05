@@ -4,9 +4,13 @@ const Index = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-page min-h-screen flex flex-col items-center px-5 py-12 font-manrope">
-      <div className="w-full max-w-sm flex flex-col items-center animate-fade-in">
-        <div className="text-7xl mb-6 mt-4">🤰</div>
+    <div className="bg-page min-h-screen flex flex-col items-center px-5 py-12 font-manrope relative overflow-hidden">
+      <div className="absolute top-20 right-10 text-3xl opacity-40 animate-float pointer-events-none">💕</div>
+      <div className="absolute top-40 left-6 text-2xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '1.5s' }}>✨</div>
+      <div className="absolute bottom-32 right-8 text-3xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '0.8s' }}>🌸</div>
+
+      <div className="w-full max-w-sm flex flex-col items-center animate-fade-in relative z-10">
+        <div className="text-7xl mb-6 mt-4 animate-float">🤰</div>
 
         <h1 className="text-4xl font-extrabold text-center text-crimson leading-tight mb-4">
           Тест на<br />беременность

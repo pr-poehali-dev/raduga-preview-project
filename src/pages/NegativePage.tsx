@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import BackButton from '@/components/BackButton';
 
 const reasons = [
   { emoji: '⏱️', title: 'Слишком рано', text: 'Тест сделан слишком рано — ХГЧ ещё не достиг определяемого уровня. Повторите через 3–5 дней.' },
@@ -16,17 +17,16 @@ const NegativePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="bg-page min-h-screen px-4 py-8 font-manrope">
-      <div className="max-w-sm mx-auto animate-fade-in">
-        <button
-          onClick={() => navigate('/')}
-          className="flex items-center gap-1 text-purple-600 font-semibold mb-8 hover:opacity-70 transition-opacity"
-        >
-          ← Назад
-        </button>
+    <div className="bg-page min-h-screen px-4 py-8 font-manrope relative overflow-hidden">
+      <div className="absolute top-32 right-8 text-3xl opacity-40 animate-float pointer-events-none">🌿</div>
+      <div className="absolute top-1/3 left-6 text-2xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '1.4s' }}>✨</div>
+      <div className="absolute bottom-44 right-10 text-3xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '0.7s' }}>💜</div>
+
+      <div className="max-w-sm mx-auto animate-fade-in relative z-10">
+        <BackButton onClick={() => navigate('/')} color="text-purple-700" />
 
         <div className="text-center mb-8">
-          <div className="text-7xl mb-4">🌿</div>
+          <div className="text-7xl mb-4 animate-float">🌿</div>
           <h1 className="text-3xl font-extrabold text-purple-700 mb-3">Всё будет хорошо</h1>
           <p className="text-gray-500 text-base leading-relaxed">
             Не переживайте — отрицательный результат теста бывает по разным причинам
