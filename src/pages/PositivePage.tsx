@@ -7,22 +7,27 @@ const weeks = [
   {
     label: '4–5 недель',
     desc: 'Идёт активное развитие внезародышевых органов. В данное время происходит зарождение всех основных систем будущего организма.',
+    img: 'https://cdn.poehali.dev/projects/1e2c7eb4-b816-4660-8c2e-943f1c0f94ed/files/22ef36fa-c6dd-430c-b791-04018a7c4de9.jpg',
   },
   {
     label: '8 недель',
     desc: 'Активно развивается нервная система — происходит разделение мозга на отделы, очерчиваются полушария, формируются извилины. Лицо становится более рельефным, формируются уши, ноздри, глаза.',
+    img: 'https://cdn.poehali.dev/projects/1e2c7eb4-b816-4660-8c2e-943f1c0f94ed/files/bba23fc2-e1b7-45dd-aeca-eed8b211d3f3.jpg',
   },
   {
     label: '12 недель',
     desc: 'Отмечается интенсивное развитие головного мозга, формирование связей со спинным мозгом и большими полушариями.',
+    img: 'https://cdn.poehali.dev/projects/1e2c7eb4-b816-4660-8c2e-943f1c0f94ed/files/94364645-8dda-4ebf-baaa-5fae855bc92f.jpg',
   },
   {
     label: '20 недель',
     desc: 'Интенсивный рост размеров. Малыш достаточно активен, совершает многочисленные движения.',
+    img: 'https://cdn.poehali.dev/projects/1e2c7eb4-b816-4660-8c2e-943f1c0f94ed/files/dae5ef46-9ee1-40ba-b97c-edb07a4c689e.jpg',
   },
   {
     label: '36–38 недель — малыш готов к встрече с мамой!',
     desc: 'Тело становится розового цвета, мышцы крепче, а плечики приобретают округлую форму. Кроха занимает уже окончательное положение в матке. Беременность считается доношенной.',
+    img: 'https://cdn.poehali.dev/projects/1e2c7eb4-b816-4660-8c2e-943f1c0f94ed/files/f272e5e1-971a-4bfb-8d22-4bb27311630c.jpg',
   },
 ];
 
@@ -79,13 +84,19 @@ const PositivePage = () => {
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {weeks.slice(0, 4).map((w) => (
-                    <div key={w.label} className="bg-blue-50 rounded-xl p-3">
-                      <p className="text-gray-700 font-semibold text-xs mb-2">{w.label}</p>
+                    <div key={w.label} className="bg-blue-50 rounded-xl p-3 flex flex-col">
+                      <div className="w-full aspect-square rounded-lg overflow-hidden mb-2 bg-white">
+                        <img src={w.img} alt={w.label} className="w-full h-full object-cover" />
+                      </div>
+                      <p className="text-gray-700 font-semibold text-xs mb-1">{w.label}</p>
                       <p className="text-gray-500 text-xs leading-relaxed">{w.desc}</p>
                     </div>
                   ))}
                 </div>
                 <div className="bg-blue-50 rounded-xl p-4 mt-3">
+                  <div className="w-full aspect-[16/10] rounded-lg overflow-hidden mb-3 bg-white">
+                    <img src={weeks[4].img} alt={weeks[4].label} className="w-full h-full object-cover" />
+                  </div>
                   <p className="text-gray-700 font-semibold text-sm mb-2 text-center">{weeks[4].label}</p>
                   <p className="text-gray-500 text-sm leading-relaxed text-center">{weeks[4].desc}</p>
                 </div>
@@ -192,19 +203,68 @@ const PositivePage = () => {
 
             {openSection === 'choice' && (
               <div className="bg-white rounded-2xl p-5 shadow-sm animate-fade-in">
-                <p className="text-gray-700 font-bold mb-3">Вы не одна</p>
-                <p className="text-gray-500 text-sm leading-relaxed mb-3">
-                  Если вы оказались в трудной жизненной ситуации — знайте, что вам есть куда обратиться за помощью и поддержкой.
+                <p className="text-gray-700 text-sm leading-relaxed mb-4">
+                  Если ты оказалась в непростой жизненной ситуации — знай, что ты не одна. Есть люди, которые готовы помочь.
                 </p>
+
+                <div className="bg-pink-50 rounded-xl p-4 mb-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-2xl flex-shrink-0">❤️</span>
+                    <div className="flex-1">
+                      <p className="font-bold text-purple-800 text-sm mb-1">Фонд «Спаси жизнь»</p>
+                      <p className="text-gray-600 text-xs leading-relaxed">
+                        Если ты оказалась в трудной ситуации, не оставайся с этим одна. Позвони по номеру{' '}
+                        <a href="tel:+79031793970" className="text-purple-700 font-semibold underline">
+                          +7 (903) 179-39-70
+                        </a>{' '}
+                        — тебе окажут материальную помощь, а также психологическую и юридическую поддержку.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 <div className="flex flex-col gap-2">
-                  <div className="bg-purple-50 rounded-xl p-3">
-                    <p className="font-semibold text-gray-800 text-sm">🏥 Социальная помощь</p>
-                    <p className="text-gray-500 text-xs mt-1">Обратитесь в органы социальной защиты населения по месту жительства.</p>
-                  </div>
-                  <div className="bg-purple-50 rounded-xl p-3">
-                    <p className="font-semibold text-gray-800 text-sm">📞 Горячая линия</p>
-                    <p className="text-gray-500 text-xs mt-1">Всероссийская горячая линия помощи беременным: 8-800-2000-122 (бесплатно)</p>
-                  </div>
+                  <a
+                    href="https://vk.com/nechayannaya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-50 rounded-xl p-3 flex items-start gap-3 hover:scale-[1.02] transition-transform"
+                  >
+                    <span className="text-2xl flex-shrink-0">🏠</span>
+                    <div className="flex-1">
+                      <p className="font-bold text-purple-800 text-sm">Центр «Нечаянная радость»</p>
+                      <p className="text-gray-500 text-xs mt-0.5">Помощь беременным и мамам с детьми без жилья</p>
+                    </div>
+                    <Icon name="ExternalLink" size={16} className="text-purple-600 flex-shrink-0 mt-1" />
+                  </a>
+
+                  <a
+                    href="https://www.aistenok.org/about/help/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-yellow-50 rounded-xl p-3 flex items-start gap-3 hover:scale-[1.02] transition-transform"
+                  >
+                    <span className="text-2xl flex-shrink-0">🐥</span>
+                    <div className="flex-1">
+                      <p className="font-bold text-purple-800 text-sm">Организация «Аистёнок»</p>
+                      <p className="text-gray-500 text-xs mt-0.5">Помощь семьям с детьми в трудной жизненной ситуации</p>
+                    </div>
+                    <Icon name="ExternalLink" size={16} className="text-purple-600 flex-shrink-0 mt-1" />
+                  </a>
+
+                  <a
+                    href="https://vk.com/kolybelekb"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-pink-50 rounded-xl p-3 flex items-start gap-3 hover:scale-[1.02] transition-transform"
+                  >
+                    <span className="text-2xl flex-shrink-0">🛏️</span>
+                    <div className="flex-1">
+                      <p className="font-bold text-purple-800 text-sm">Центр защиты семьи «Колыбель»</p>
+                      <p className="text-gray-500 text-xs mt-0.5">Поддержка и защита семьи, помощь мамам</p>
+                    </div>
+                    <Icon name="ExternalLink" size={16} className="text-purple-600 flex-shrink-0 mt-1" />
+                  </a>
                 </div>
               </div>
             )}
