@@ -1,10 +1,10 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import BackButton from '@/components/BackButton';
-import Icon from '@/components/ui/icon';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import BackButton from "@/components/BackButton";
+import Icon from "@/components/ui/icon";
 
-type Section = 'prep' | 'doctor' | 'resources' | null;
-type MkbbItem = 'institutions' | 'criteria' | 'female' | 'male' | null;
+type Section = "prep" | "doctor" | "resources" | null;
+type MkbbItem = "institutions" | "criteria" | "female" | "male" | null;
 
 const NegativePage = () => {
   const navigate = useNavigate();
@@ -12,47 +12,103 @@ const NegativePage = () => {
   const [openMkbb, setOpenMkbb] = useState<MkbbItem>(null);
 
   const toggle = (s: Section) => {
-    setOpenSection(prev => prev === s ? null : s);
+    setOpenSection((prev) => (prev === s ? null : s));
   };
 
   const toggleMkbb = (m: MkbbItem) => {
-    setOpenMkbb(prev => prev === m ? null : m);
+    setOpenMkbb((prev) => (prev === m ? null : m));
   };
 
   return (
     <div className="bg-page min-h-screen px-4 py-8 font-manrope relative overflow-hidden">
-      <div className="absolute top-12 left-6 text-xl opacity-50 animate-pulse-soft pointer-events-none">✨</div>
-      <div className="absolute top-24 right-10 text-2xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.4s' }}>⭐</div>
-      <div className="absolute top-40 left-10 text-lg opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.8s' }}>✨</div>
-      <div className="absolute top-56 right-4 text-xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.2s' }}>⭐</div>
-      <div className="absolute top-1/3 left-4 text-2xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.6s' }}>✨</div>
-      <div className="absolute top-1/2 right-12 text-lg opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.6s' }}>⭐</div>
-      <div className="absolute bottom-1/3 left-10 text-xl opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.4s' }}>✨</div>
-      <div className="absolute bottom-44 right-6 text-2xl opacity-50 animate-pulse-soft pointer-events-none" style={{ animationDelay: '0.2s' }}>⭐</div>
-      <div className="absolute bottom-24 left-6 text-lg opacity-60 animate-pulse-soft pointer-events-none" style={{ animationDelay: '1.8s' }}>✨</div>
-      <div className="absolute top-32 right-8 text-3xl opacity-40 animate-float pointer-events-none">🌿</div>
-      <div className="absolute bottom-44 right-2 text-3xl opacity-40 animate-float pointer-events-none" style={{ animationDelay: '0.7s' }}>💜</div>
+      <div className="absolute top-12 left-6 text-xl opacity-50 animate-pulse-soft pointer-events-none">
+        ✨
+      </div>
+      <div
+        className="absolute top-24 right-10 text-2xl opacity-60 animate-pulse-soft pointer-events-none"
+        style={{ animationDelay: "0.4s" }}
+      >
+        ⭐
+      </div>
+      <div
+        className="absolute top-40 left-10 text-lg opacity-50 animate-pulse-soft pointer-events-none"
+        style={{ animationDelay: "0.8s" }}
+      >
+        ✨
+      </div>
+      <div
+        className="absolute top-56 right-4 text-xl opacity-50 animate-pulse-soft pointer-events-none"
+        style={{ animationDelay: "1.2s" }}
+      >
+        ⭐
+      </div>
+      <div
+        className="absolute top-1/3 left-4 text-2xl opacity-60 animate-pulse-soft pointer-events-none"
+        style={{ animationDelay: "1.6s" }}
+      >
+        ✨
+      </div>
+      <div
+        className="absolute top-1/2 right-12 text-lg opacity-50 animate-pulse-soft pointer-events-none"
+        style={{ animationDelay: "0.6s" }}
+      >
+        ⭐
+      </div>
+      <div
+        className="absolute bottom-1/3 left-10 text-xl opacity-60 animate-pulse-soft pointer-events-none"
+        style={{ animationDelay: "1.4s" }}
+      >
+        ✨
+      </div>
+      <div
+        className="absolute bottom-44 right-6 text-2xl opacity-50 animate-pulse-soft pointer-events-none"
+        style={{ animationDelay: "0.2s" }}
+      >
+        ⭐
+      </div>
+      <div
+        className="absolute bottom-24 left-6 text-lg opacity-60 animate-pulse-soft pointer-events-none"
+        style={{ animationDelay: "1.8s" }}
+      >
+        ✨
+      </div>
+      <div className="absolute top-32 right-8 text-3xl opacity-40 animate-float pointer-events-none">
+        🌿
+      </div>
+      <div
+        className="absolute bottom-44 right-2 text-3xl opacity-40 animate-float pointer-events-none"
+        style={{ animationDelay: "0.7s" }}
+      >
+        💜
+      </div>
 
       <div className="max-w-sm mx-auto animate-fade-in relative z-10">
-        <BackButton onClick={() => navigate('/')} color="text-purple-700" />
+        <BackButton onClick={() => navigate("/")} color="text-purple-700" />
 
         <div className="text-center mb-6">
           <div className="text-7xl mb-3 animate-float">🌿</div>
-          <h1 className="text-3xl font-extrabold text-purple-700 mb-3">Не огорчайся!</h1>
+          <h1 className="text-3xl font-extrabold text-purple-700 mb-3">
+            Не огорчайся!
+          </h1>
         </div>
 
         <div className="bg-white rounded-2xl shadow-md p-5 mb-5">
           <p className="text-gray-700 text-base leading-relaxed">
-            Если у тебя отрицательный тест на беременность — это не повод расстраиваться. Обратись в свою женскую консультацию: тебе помогут подготовиться к беременности и рождению здорового малыша 🌷
+            Если у тебя отрицательный тест на беременность — это не повод
+            расстраиваться. Обратись в свою женскую консультацию: тебе помогут
+            подготовиться к беременности и рождению здорового малыша 🌷
           </p>
         </div>
 
         <div className="flex flex-col gap-4">
           {/* Подготовка к беременности */}
           <button
-            onClick={() => toggle('prep')}
+            onClick={() => toggle("prep")}
             className="w-full rounded-2xl p-5 flex items-center gap-4 shadow-lg text-left hover:scale-[1.01] transition-transform"
-            style={{ background: 'linear-gradient(135deg, #5eead4 0%, #2dd4bf 60%, #14b8a6 100%)' }}
+            style={{
+              background:
+                "linear-gradient(135deg, #5eead4 0%, #2dd4bf 60%, #14b8a6 100%)",
+            }}
           >
             <div className="w-16 h-16 rounded-xl bg-white/30 flex-shrink-0 flex items-center justify-center text-3xl">
               👫
@@ -60,19 +116,27 @@ const NegativePage = () => {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <span>🌱</span>
-                <span className="text-white font-bold text-base">Подготовка к беременности</span>
+                <span className="text-white font-bold text-base">
+                  Подготовка к беременности
+                </span>
               </div>
-              <div className="text-teal-50 text-sm">Шаги к здоровому материнству и поиск консультации</div>
+              <div className="text-teal-50 text-sm">
+                Шаги к здоровому материнству и поиск консультации
+              </div>
             </div>
-            <span className="text-white text-lg">{openSection === 'prep' ? '∧' : '∨'}</span>
+            <span className="text-white text-lg">
+              {openSection === "prep" ? "∧" : "∨"}
+            </span>
           </button>
 
-          {openSection === 'prep' && (
+          {openSection === "prep" && (
             <div className="flex flex-col gap-4 animate-fade-in">
               <div className="bg-teal-50/90 backdrop-blur-sm rounded-2xl p-5 shadow-sm border border-teal-100">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xl">📋</span>
-                  <h3 className="font-bold text-gray-800 text-base">Рекомендуемые шаги</h3>
+                  <h3 className="font-bold text-gray-800 text-base">
+                    Рекомендуемые шаги
+                  </h3>
                 </div>
                 <ul className="flex flex-col gap-3 text-gray-700 text-sm leading-relaxed">
                   <li>• Пройди осмотр у гинеколога для оценки здоровья</li>
@@ -85,7 +149,9 @@ const NegativePage = () => {
               <div className="bg-teal-50/90 backdrop-blur-sm rounded-2xl p-5 shadow-sm border border-teal-100">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xl">🏥</span>
-                  <h3 className="font-bold text-gray-800 text-base">Найти женскую консультацию</h3>
+                  <h3 className="font-bold text-gray-800 text-base">
+                    Найти женскую консультацию
+                  </h3>
                 </div>
                 <a
                   href="https://2gis.ru/ekaterinburg/search/%D0%B6%D0%B5%D0%BD%D1%81%D0%BA%D0%B0%D1%8F%20%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%86%D0%B8%D1%8F"
@@ -95,10 +161,18 @@ const NegativePage = () => {
                 >
                   <span className="text-xl flex-shrink-0">📍</span>
                   <div className="flex-1">
-                    <p className="font-bold text-teal-700 text-sm">Ближайшая женская консультация</p>
-                    <p className="text-gray-500 text-xs mt-0.5">Поиск на карте Свердловской области</p>
+                    <p className="font-bold text-teal-700 text-sm">
+                      Ближайшая женская консультация
+                    </p>
+                    <p className="text-gray-500 text-xs mt-0.5">
+                      Поиск на карте Свердловской области
+                    </p>
                   </div>
-                  <Icon name="ExternalLink" size={16} className="text-teal-600 flex-shrink-0 mt-1" />
+                  <Icon
+                    name="ExternalLink"
+                    size={16}
+                    className="text-teal-600 flex-shrink-0 mt-1"
+                  />
                 </a>
               </div>
             </div>
@@ -106,9 +180,12 @@ const NegativePage = () => {
 
           {/* Записаться к врачу */}
           <button
-            onClick={() => toggle('doctor')}
+            onClick={() => toggle("doctor")}
             className="w-full rounded-2xl p-5 flex items-center gap-4 shadow-lg text-left hover:scale-[1.01] transition-transform"
-            style={{ background: 'linear-gradient(135deg, #c4b5fd 0%, #818cf8 60%, #6366f1 100%)' }}
+            style={{
+              background:
+                "linear-gradient(135deg, #c4b5fd 0%, #818cf8 60%, #6366f1 100%)",
+            }}
           >
             <div className="w-16 h-16 rounded-xl bg-white/30 flex-shrink-0 flex items-center justify-center text-3xl">
               🧪
@@ -116,17 +193,24 @@ const NegativePage = () => {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <span>👩‍⚕️</span>
-                <span className="text-white font-bold text-base">Записаться к врачу</span>
+                <span className="text-white font-bold text-base">
+                  Записаться к врачу
+                </span>
               </div>
-              <div className="text-indigo-50 text-sm">Чат-бот «Запись к врачу», Свердловская область</div>
+              <div className="text-indigo-50 text-sm">
+                Чат-бот «Запись к врачу», Свердловская область
+              </div>
             </div>
-            <span className="text-white text-lg">{openSection === 'doctor' ? '∧' : '∨'}</span>
+            <span className="text-white text-lg">
+              {openSection === "doctor" ? "∧" : "∨"}
+            </span>
           </button>
 
-          {openSection === 'doctor' && (
+          {openSection === "doctor" && (
             <div className="bg-white rounded-2xl p-5 shadow-sm animate-fade-in">
               <p className="text-gray-700 text-sm leading-relaxed mb-4">
-                Запишись к акушеру-гинекологу прямо сейчас через официальный чат-бот Свердловской области — быстро и без очередей.
+                Запишись к акушеру-гинекологу прямо сейчас через официальный
+                чат-бот Свердловской области — быстро и без очередей.
               </p>
               <a
                 href="https://max.ru/k_vrachu_sverdlovsk_bot"
@@ -138,15 +222,26 @@ const NegativePage = () => {
                   💬
                 </div>
                 <div className="flex-1">
-                  <p className="font-bold text-indigo-700 text-base">Мессенджер MAX</p>
-                  <p className="text-gray-600 text-sm">Чат-бот «Запись к врачу»</p>
-                  <p className="text-indigo-600 text-xs mt-0.5">Свердловская область</p>
+                  <p className="font-bold text-indigo-700 text-base">
+                    Мессенджер MAX
+                  </p>
+                  <p className="text-gray-600 text-sm">
+                    Чат-бот «Запись к врачу»
+                  </p>
+                  <p className="text-indigo-600 text-xs mt-0.5">
+                    Свердловская область
+                  </p>
                 </div>
-                <Icon name="ExternalLink" size={20} className="text-indigo-500 flex-shrink-0" />
+                <Icon
+                  name="ExternalLink"
+                  size={20}
+                  className="text-indigo-500 flex-shrink-0"
+                />
               </a>
               <div className="bg-gray-50 rounded-xl p-3 text-center">
                 <p className="text-gray-500 text-xs leading-relaxed">
-                  Также можно позвонить в регистратуру своей поликлиники или обратиться через портал Госуслуг
+                  Также можно позвонить в регистратуру своей поликлиники или
+                  обратиться через портал Госуслуг
                 </p>
               </div>
             </div>
@@ -154,9 +249,12 @@ const NegativePage = () => {
 
           {/* Ресурсы помощи семьям */}
           <button
-            onClick={() => toggle('resources')}
+            onClick={() => toggle("resources")}
             className="w-full rounded-2xl p-5 flex items-center gap-4 shadow-lg text-left hover:scale-[1.01] transition-transform"
-            style={{ background: 'linear-gradient(135deg, #fda4af 0%, #f472b6 60%, #ec4899 100%)' }}
+            style={{
+              background:
+                "linear-gradient(135deg, #fda4af 0%, #f472b6 60%, #ec4899 100%)",
+            }}
           >
             <div className="w-16 h-16 rounded-xl bg-white/30 flex-shrink-0 flex items-center justify-center text-3xl">
               🤰
@@ -164,26 +262,36 @@ const NegativePage = () => {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-1">
                 <span>🤝</span>
-                <span className="text-white font-bold text-base">Ресурсы помощи семьям</span>
+                <span className="text-white font-bold text-base">
+                  Ресурсы помощи семьям
+                </span>
               </div>
-              <div className="text-pink-50 text-sm">ВРТ, НКО, поддержка при планировании</div>
+              <div className="text-pink-50 text-sm">
+                ВРТ, НКО, поддержка при планировании
+              </div>
             </div>
-            <span className="text-white text-lg">{openSection === 'resources' ? '∧' : '∨'}</span>
+            <span className="text-white text-lg">
+              {openSection === "resources" ? "∧" : "∨"}
+            </span>
           </button>
 
-          {openSection === 'resources' && (
+          {openSection === "resources" && (
             <div className="bg-white rounded-2xl p-5 shadow-sm animate-fade-in flex flex-col gap-4">
               <p className="text-gray-700 text-sm leading-relaxed">
-                Если беременность не наступает длительное время — существуют программы помощи и современные медицинские технологии.
+                Если беременность не наступает длительное время — существуют
+                программы помощи и современные медицинские технологии.
               </p>
 
               <div className="bg-pink-50 rounded-2xl p-4">
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-xl">🧬</span>
-                  <h3 className="font-bold text-pink-800 text-sm">ВРТ — Вспомогательные репродуктивные технологии</h3>
+                  <h3 className="font-bold text-pink-800 text-sm">
+                    ВРТ — Вспомогательные репродуктивные технологии
+                  </h3>
                 </div>
                 <p className="text-gray-600 text-xs leading-relaxed mb-3">
-                  ЭКО и другие методы по полису ОМС — обратись к врачу для направления
+                  ЭКО и другие методы по полису ОМС — обратись к врачу для
+                  направления
                 </p>
                 <div className="flex flex-col gap-2">
                   <a
@@ -194,10 +302,18 @@ const NegativePage = () => {
                   >
                     <span className="text-xl flex-shrink-0">🏥</span>
                     <div className="flex-1">
-                      <p className="font-bold text-pink-700 text-sm">Министерство здравоохранения СО</p>
-                      <p className="text-gray-500 text-xs mt-0.5">ВРТ в Свердловской области</p>
+                      <p className="font-bold text-pink-700 text-sm">
+                        Министерство здравоохранения СО
+                      </p>
+                      <p className="text-gray-500 text-xs mt-0.5">
+                        ВРТ в Свердловской области
+                      </p>
                     </div>
-                    <Icon name="ExternalLink" size={16} className="text-pink-600 flex-shrink-0 mt-1" />
+                    <Icon
+                      name="ExternalLink"
+                      size={16}
+                      className="text-pink-600 flex-shrink-0 mt-1"
+                    />
                   </a>
                   <a
                     href="https://xn--52-6kc3besvhp0j.xn--p1ai/pacientam/eko_po_polisu_oms/"
@@ -207,10 +323,18 @@ const NegativePage = () => {
                   >
                     <span className="text-xl flex-shrink-0">💊</span>
                     <div className="flex-1">
-                      <p className="font-bold text-pink-700 text-sm">ЭКО по полису ОМС</p>
-                      <p className="text-gray-500 text-xs mt-0.5">Флотская 52 — информация для пациентов</p>
+                      <p className="font-bold text-pink-700 text-sm">
+                        ЭКО по полису ОМС
+                      </p>
+                      <p className="text-gray-500 text-xs mt-0.5">
+                        Флотская 52 — информация для пациентов
+                      </p>
                     </div>
-                    <Icon name="ExternalLink" size={16} className="text-pink-600 flex-shrink-0 mt-1" />
+                    <Icon
+                      name="ExternalLink"
+                      size={16}
+                      className="text-pink-600 flex-shrink-0 mt-1"
+                    />
                   </a>
                 </div>
               </div>
@@ -218,100 +342,166 @@ const NegativePage = () => {
               <div className="bg-yellow-50 rounded-2xl p-4">
                 <div className="flex items-center gap-2 mb-3">
                   <span className="text-xl">👶</span>
-                  <h3 className="font-bold text-orange-800 text-sm">МКББ — Межведомственная комиссия по бесплодию</h3>
+                  <h3 className="font-bold text-orange-800 text-sm">
+                    МКББ — межтерриториальные кабинеты бесплодного брака
+                  </h3>
                 </div>
                 <div className="flex flex-col gap-2">
                   <button
-                    onClick={() => toggleMkbb('institutions')}
+                    onClick={() => toggleMkbb("institutions")}
                     className="bg-white rounded-xl p-3 flex items-center gap-2 w-full text-left hover:scale-[1.01] transition-transform"
                   >
                     <span>🏛️</span>
-                    <p className="font-semibold text-gray-700 text-sm flex-1">Учреждения МКББ</p>
-                    <span className="text-orange-500 text-sm">{openMkbb === 'institutions' ? '∧' : '∨'}</span>
+                    <p className="font-semibold text-gray-700 text-sm flex-1">
+                      Учреждения МКББ
+                    </p>
+                    <span className="text-orange-500 text-sm">
+                      {openMkbb === "institutions" ? "∧" : "∨"}
+                    </span>
                   </button>
-                  {openMkbb === 'institutions' && (
+                  {openMkbb === "institutions" && (
                     <div className="bg-white rounded-xl p-3 animate-fade-in flex flex-col gap-2">
                       <p className="text-gray-600 text-xs leading-relaxed mb-2">
-                        В Свердловской области направление на ВРТ оформляют в следующих медучреждениях:
+                        В Свердловской области направление на ВРТ оформляют в
+                        следующих медучреждениях:
                       </p>
                       <div className="bg-orange-50 rounded-lg p-2.5">
-                        <p className="font-bold text-orange-800 text-xs">🏥 ГАУЗ СО «КДЦ Охрана здоровья матери и ребёнка»</p>
-                        <p className="text-gray-500 text-xs mt-0.5">г. Екатеринбург, ул. Флотская, 52</p>
+                        <p className="font-bold text-orange-800 text-xs">
+                          🏥 ГАУЗ СО «КДЦ Охрана здоровья матери и ребёнка»
+                        </p>
+                        <p className="text-gray-500 text-xs mt-0.5">
+                          г. Екатеринбург, ул. Флотская, 52
+                        </p>
                       </div>
                       <div className="bg-orange-50 rounded-lg p-2.5">
-                        <p className="font-bold text-orange-800 text-xs">🏥 ГБУЗ СО «ОДКБ №1» — Перинатальный центр</p>
-                        <p className="text-gray-500 text-xs mt-0.5">г. Екатеринбург, ул. С. Дерябиной, 32</p>
+                        <p className="font-bold text-orange-800 text-xs">
+                          🏥 ГБУЗ СО «ОДКБ №1» — Перинатальный центр
+                        </p>
+                        <p className="text-gray-500 text-xs mt-0.5">
+                          г. Екатеринбург, ул. С. Дерябиной, 32
+                        </p>
                       </div>
                       <div className="bg-orange-50 rounded-lg p-2.5">
-                        <p className="font-bold text-orange-800 text-xs">🏥 Центр семейной медицины</p>
-                        <p className="text-gray-500 text-xs mt-0.5">Партнёр программы ОМС, г. Екатеринбург</p>
+                        <p className="font-bold text-orange-800 text-xs">
+                          🏥 Центр семейной медицины
+                        </p>
+                        <p className="text-gray-500 text-xs mt-0.5">
+                          Партнёр программы ОМС, г. Екатеринбург
+                        </p>
                       </div>
                     </div>
                   )}
 
                   <button
-                    onClick={() => toggleMkbb('criteria')}
+                    onClick={() => toggleMkbb("criteria")}
                     className="bg-white rounded-xl p-3 flex items-center gap-2 w-full text-left hover:scale-[1.01] transition-transform"
                   >
                     <span>ℹ️</span>
-                    <p className="font-semibold text-gray-700 text-sm flex-1">Критерии бесплодия</p>
-                    <span className="text-orange-500 text-sm">{openMkbb === 'criteria' ? '∧' : '∨'}</span>
+                    <p className="font-semibold text-gray-700 text-sm flex-1">
+                      Критерии бесплодия
+                    </p>
+                    <span className="text-orange-500 text-sm">
+                      {openMkbb === "criteria" ? "∧" : "∨"}
+                    </span>
                   </button>
-                  {openMkbb === 'criteria' && (
+                  {openMkbb === "criteria" && (
                     <div className="bg-white rounded-xl p-3 animate-fade-in">
                       <p className="text-gray-600 text-xs leading-relaxed mb-2">
-                        Бесплодие — отсутствие беременности при регулярной половой жизни без контрацепции в течение:
+                        Бесплодие — отсутствие беременности при регулярной
+                        половой жизни без контрацепции в течение:
                       </p>
                       <ul className="flex flex-col gap-1.5 text-gray-700 text-xs">
-                        <li className="bg-orange-50 rounded-lg p-2">⏳ <b>12 месяцев</b> — для женщин до 35 лет</li>
-                        <li className="bg-orange-50 rounded-lg p-2">⏳ <b>6 месяцев</b> — для женщин 35 лет и старше</li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          ⏳ <b>12 месяцев</b> — для женщин до 35 лет
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          ⏳ <b>6 месяцев</b> — для женщин 35 лет и старше
+                        </li>
                       </ul>
                       <p className="text-gray-600 text-xs leading-relaxed mt-2">
-                        Бесплодие может быть первичным (беременности не было никогда) или вторичным (была хотя бы одна).
+                        Бесплодие может быть первичным (беременности не было
+                        никогда) или вторичным (была хотя бы одна).
                       </p>
                     </div>
                   )}
 
                   <button
-                    onClick={() => toggleMkbb('female')}
+                    onClick={() => toggleMkbb("female")}
                     className="bg-white rounded-xl p-3 flex items-center gap-2 w-full text-left hover:scale-[1.01] transition-transform"
                   >
                     <span>👩</span>
-                    <p className="font-semibold text-gray-700 text-sm flex-1">Обследование женщины</p>
-                    <span className="text-orange-500 text-sm">{openMkbb === 'female' ? '∧' : '∨'}</span>
+                    <p className="font-semibold text-gray-700 text-sm flex-1">
+                      Обследование женщины
+                    </p>
+                    <span className="text-orange-500 text-sm">
+                      {openMkbb === "female" ? "∧" : "∨"}
+                    </span>
                   </button>
-                  {openMkbb === 'female' && (
+                  {openMkbb === "female" && (
                     <div className="bg-white rounded-xl p-3 animate-fade-in">
-                      <p className="text-gray-600 text-xs leading-relaxed mb-2">Базовое обследование включает:</p>
+                      <p className="text-gray-600 text-xs leading-relaxed mb-2">
+                        Базовое обследование включает:
+                      </p>
                       <ul className="flex flex-col gap-1.5 text-gray-700 text-xs">
-                        <li className="bg-orange-50 rounded-lg p-2">🩸 Анализы на гормоны (ФСГ, ЛГ, АМГ, пролактин, ТТГ, эстрадиол)</li>
-                        <li className="bg-orange-50 rounded-lg p-2">🦠 Обследование на инфекции (ИППП, TORCH-комплекс)</li>
-                        <li className="bg-orange-50 rounded-lg p-2">📷 УЗИ органов малого таза</li>
-                        <li className="bg-orange-50 rounded-lg p-2">💧 Проверка проходимости маточных труб (ГСГ)</li>
-                        <li className="bg-orange-50 rounded-lg p-2">🔬 Кольпоскопия и цитология</li>
-                        <li className="bg-orange-50 rounded-lg p-2">📊 Общий и биохимический анализ крови</li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          🩸 Анализы на гормоны (ФСГ, ЛГ, АМГ, пролактин, ТТГ,
+                          эстрадиол)
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          🦠 Обследование на инфекции (ИППП, TORCH-комплекс)
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          📷 УЗИ органов малого таза
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          💧 Проверка проходимости маточных труб (ГСГ)
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          🔬 Кольпоскопия и цитология
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          📊 Общий и биохимический анализ крови
+                        </li>
                       </ul>
                     </div>
                   )}
 
                   <button
-                    onClick={() => toggleMkbb('male')}
+                    onClick={() => toggleMkbb("male")}
                     className="bg-white rounded-xl p-3 flex items-center gap-2 w-full text-left hover:scale-[1.01] transition-transform"
                   >
                     <span>👨</span>
-                    <p className="font-semibold text-gray-700 text-sm flex-1">Обследование мужчины</p>
-                    <span className="text-orange-500 text-sm">{openMkbb === 'male' ? '∧' : '∨'}</span>
+                    <p className="font-semibold text-gray-700 text-sm flex-1">
+                      Обследование мужчины
+                    </p>
+                    <span className="text-orange-500 text-sm">
+                      {openMkbb === "male" ? "∧" : "∨"}
+                    </span>
                   </button>
-                  {openMkbb === 'male' && (
+                  {openMkbb === "male" && (
                     <div className="bg-white rounded-xl p-3 animate-fade-in">
-                      <p className="text-gray-600 text-xs leading-relaxed mb-2">Базовое обследование включает:</p>
+                      <p className="text-gray-600 text-xs leading-relaxed mb-2">
+                        Базовое обследование включает:
+                      </p>
                       <ul className="flex flex-col gap-1.5 text-gray-700 text-xs">
-                        <li className="bg-orange-50 rounded-lg p-2">🧪 Спермограмма (основной анализ)</li>
-                        <li className="bg-orange-50 rounded-lg p-2">🦠 MAR-тест на антиспермальные антитела</li>
-                        <li className="bg-orange-50 rounded-lg p-2">💉 Анализы на гормоны (тестостерон, ФСГ, ЛГ)</li>
-                        <li className="bg-orange-50 rounded-lg p-2">🔍 Обследование на инфекции (ИППП)</li>
-                        <li className="bg-orange-50 rounded-lg p-2">📷 УЗИ органов мошонки и предстательной железы</li>
-                        <li className="bg-orange-50 rounded-lg p-2">👨‍⚕️ Консультация уролога-андролога</li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          🧪 Спермограмма (основной анализ)
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          🦠 MAR-тест на антиспермальные антитела
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          💉 Анализы на гормоны (тестостерон, ФСГ, ЛГ)
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          🔍 Обследование на инфекции (ИППП)
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          📷 УЗИ органов мошонки и предстательной железы
+                        </li>
+                        <li className="bg-orange-50 rounded-lg p-2">
+                          👨‍⚕️ Консультация уролога-андролога
+                        </li>
                       </ul>
                     </div>
                   )}
@@ -322,7 +512,8 @@ const NegativePage = () => {
         </div>
 
         <p className="text-center text-gray-400 text-xs mt-8 px-4 leading-relaxed">
-          Информация соответствует рекомендациям российских учреждений здравоохранения
+          Информация соответствует рекомендациям российских учреждений
+          здравоохранения
         </p>
       </div>
     </div>
