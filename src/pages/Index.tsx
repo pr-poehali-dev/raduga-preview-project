@@ -1,11 +1,54 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
-        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
+    <div className="bg-page min-h-screen flex flex-col items-center px-5 py-12 font-manrope">
+      <div className="w-full max-w-sm flex flex-col items-center animate-fade-in">
+        <div className="text-7xl mb-6 mt-4">🤰</div>
+
+        <h1 className="text-4xl font-extrabold text-center text-crimson leading-tight mb-4">
+          Тест на<br />беременность
+        </h1>
+
+        <p className="text-center text-gray-500 text-lg mb-10 leading-relaxed px-2">
+          Выбери результат своего теста и получи персональную информацию и помощь
+        </p>
+
+        <div className="w-full flex flex-col gap-4">
+          <button
+            onClick={() => navigate('/positive')}
+            className="card-positive w-full rounded-2xl p-5 flex items-center gap-4 shadow-lg hover:scale-[1.02] transition-transform text-left"
+          >
+            <span className="text-5xl flex-shrink-0">🎉</span>
+            <div className="flex-1">
+              <div className="text-white font-bold text-xl leading-tight">
+                Тест<br />положительный
+              </div>
+              <div className="text-pink-100 text-sm mt-1">Две полоски — это две радости!</div>
+            </div>
+            <span className="text-white text-2xl opacity-80">→</span>
+          </button>
+
+          <button
+            onClick={() => navigate('/negative')}
+            className="card-negative w-full rounded-2xl p-5 flex items-center gap-4 shadow-lg hover:scale-[1.02] transition-transform text-left"
+          >
+            <span className="text-5xl flex-shrink-0">🌿</span>
+            <div className="flex-1">
+              <div className="text-white font-bold text-xl leading-tight">
+                Тест<br />отрицательный
+              </div>
+              <div className="text-purple-100 text-sm mt-1">Всё будет хорошо, не огорчайтесь!</div>
+            </div>
+            <span className="text-white text-2xl opacity-80">→</span>
+          </button>
+        </div>
+
+        <p className="text-center text-gray-400 text-xs mt-10 px-4 leading-relaxed">
+          Информация соответствует рекомендациям российских учреждений здравоохранения
+        </p>
       </div>
     </div>
   );
