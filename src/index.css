@@ -154,7 +154,7 @@
   }
 
   .animate-scale-in {
-    animation: scale-in 0.5s ease-out forwards;
+    animation: scale-in 0.25s ease-out forwards;
   }
 
   .card-positive {
@@ -202,7 +202,7 @@
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.4s ease-out forwards;
+    animation: fadeIn 0.2s ease-out forwards;
   }
 
   @keyframes fadeIn {

@@ -549,10 +549,7 @@ const PositivePage = () => {
           </span>
         </div>
 
-        <div
-          className="bg-white rounded-2xl shadow-md p-7 w-full text-center animate-fade-in"
-          style={{ animationDelay: "0.2s" }}
-        >
+        <div className="bg-white rounded-2xl shadow-md p-7 w-full text-center animate-fade-in">
           <p className="text-crimson font-bold text-xl mb-2 text-center">
             Здравствуй,
           </p>
