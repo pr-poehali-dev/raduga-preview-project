@@ -530,7 +530,7 @@ const PositivePage = () => {
           <BackButton onClick={() => navigate("/")} />
         </div>
 
-        <div className="relative mb-6 animate-scale-in">
+        <div className="relative mb-6">
           <span className="absolute -top-4 left-0 text-2xl animate-pulse-soft z-10">
             💕
           </span>
@@ -549,7 +549,7 @@ const PositivePage = () => {
           </span>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-md p-7 w-full text-center animate-fade-in">
+        <div className="bg-white rounded-2xl shadow-md p-7 w-full text-center">
           <p className="text-crimson font-bold text-xl mb-2 text-center">
             Здравствуй,
           </p>
